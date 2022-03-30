@@ -1,0 +1,63 @@
+:root {
+    --m: 17.5;
+    --wavefreq: calc(200ms * var(--m));
+}
+
+section {
+    display: flex;
+    gap: 15px;
+    margin-top: 5vw;
+    
+}
+
+[ class*='wave' ] {
+    aspect-ratio: .125/1;
+    /* This can all be written on one line: */
+    animation: waveform var(--wavefreq)
+               ease-in-out infinite
+               forwards;
+    background-color: black;
+    border-radius: 15px;
+    width: .5vw
+}
+
+body {
+    background: lightgrey;
+}
+
+@keyframes waveform {
+        0% {
+            transform: scaleY(.5);
+        }
+        50% {
+            transform: scaleY(1.5);
+        }
+        100% {
+            transform: scaleY(.5);
+        }
+}
+
+.wave1 {
+    --wavefreq: calc(300ms * var(--m));
+}
+
+.wave2 {
+    --wavefreq: calc(400ms * var(--m));
+}
+
+.wave3 {
+    --wavefreq: calc(500ms * var(--m));
+}
+
+.wave4 {
+    --wavefreq: calc(600ms * var(--m));
+}
+
+.wave5 {
+    --wavefreq: calc(700ms * var(--m));
+}
+
+.wave6 {
+    --wavefreq: calc(800ms * var(--m))
+}
+
